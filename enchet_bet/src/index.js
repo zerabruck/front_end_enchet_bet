@@ -9,14 +9,14 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <AuthProvider>
+    <AuthProvider>
     <App />
 
-    </AuthProvider> */}
+    </AuthProvider>
 
-    <Mine_authprovider>
+    {/* <Mine_authprovider>
       <App></App>
-    </Mine_authprovider>
+    </Mine_authprovider> */}
     
   </React.StrictMode>
 );

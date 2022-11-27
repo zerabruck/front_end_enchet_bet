@@ -2,6 +2,7 @@ import React from 'react'
 import {useRef,useState,useEffect,useContext} from 'react'
 import AuthContext from './context/Authprovider';
 import axios from '../api/axios';
+import "../assets/css/login.css"
 
 const LOGINURL='/login'
 function Login() {
@@ -78,45 +79,53 @@ function Login() {
   return (
    <>{
     success? <h1>you have logged in {user}</h1>:
-    <div>
-    <p ref={errRef} className={errMsg?"errmsg":"offscreen" } aria-live="assertive" >
+   <div className='login_container'>
+    <p>
+        company logo
+    </p>
+     <div className='login_inner_container'>
+    <p ref={errRef} className="login_top_err_msg"aria-live="assertive" >
         {errMsg}
     </p>
+    <div className='login_header_container'>
+    <div className='login_header_left'>
+    <p>
+        Welcome to <span className='company_name'>EnchetBet</span>
+    </p>
     <h1>
-        sign in
+        Sign in
     </h1>
+    </div>
+    <div className='login_header_right'>
+        <p>
+            No Account?
 
-    <form onSubmit={handlesubmit}>
-        <label htmlFor='username'>Username</label>
-        <input
+        </p>
+        <p>
+            Sign up
+        </p>
+    </div>
+    </div>
+
+    <form className='form_container' onSubmit={handlesubmit}>
+        <label className='form_label' htmlFor='username'>Enter your username</label>
+        <input placeholder='username' className='form_input_feild'
         required 
          autoComplete='off' value={user} onChange={(e)=>{setUser(e.target.value)}} name='username' id='username' ref={userRef} type='text' />
 
         
-        <label htmlFor='password'>Password</label>
-        <input
+        <label className='form_label' htmlFor='password'>Enter your password</label>
+        <input placeholder='password' className='form_input_feild'
         required
          value={pwd} onChange={(e)=>{setPwd(e.target.value)}} name='password' id='password' type='password' />
 
-        <button> sign in   </button>
+        <button className='form_button'> sign in   </button>
 
         
     </form>
 
-    <p>
-        Neeed an Account?<br/>
-        <span>
-            <a href='#'>
-                Sign Up
-            </a>
-        </span>
-    </p>
-
-
-
-
-
 </div>
+   </div>
    }
    </>
   )
