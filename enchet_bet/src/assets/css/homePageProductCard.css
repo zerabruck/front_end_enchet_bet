@@ -1,0 +1,40 @@
+html, body {
+    height: 100%; 
+    width: 100%; 
+    margin: 0; 
+}
+
+.displaying_baby{
+    display: flex;
+    gap: 1rem;
+    margin: auto;
+}
+.home_page_card_container{
+
+}
+.home_page_card_img_container img :hover{
+    filter:brightness(0.6);
+    display: none;
+}
+.home_page_card_img_container :hover{
+    filter:brightness(0.8);
+
+}
+
+.home_page_card_img_container{
+    height: 39vh;
+    width: 20vw;
+}
+.home_page_card_img_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home_page_card_text_container{
+}
+
+.home_page_card_text_container{
+    display: flex;
+    gap: 1rem;
+}
